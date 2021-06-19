@@ -1,5 +1,6 @@
 const startButton = document.getElementById('strt_btn')
 const nextButton = document.getElementById('nxt_btn')
+const headerGreetingElement = document.getElementById('landing_dia')
 const questionContainerElement = document.getElementById('question_container')
 const questionElement = document.getElementById('question')
 const answerButtonsElement = document.getElementById('answer-buttons')
@@ -20,8 +21,10 @@ function startQuiz(){
   startButton.classList.add('hide')
   shuffledQuestions = questions.sort(() => Math.random() - .5)
   currentQuestionIndex = 0
+  headerGreetingElement.classList.add('hide')
   questionContainerElement.classList.remove('hide')
   setNextQuestion()
+
 }
 
 function setNextQuestion() {

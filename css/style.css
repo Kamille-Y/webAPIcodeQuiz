@@ -2,13 +2,6 @@
   box-sizing: border-box;
   font-family: cursive;
 }
-/* colors for possible outcomes */
-
-:root {
-  --neutral: hsl(180, 83%, 50%);
-  --wrong: hsl(5, 83%, 50%);
-  --correct: hsl(131, 51%, 38%);
-}
 
 body {
   padding: 0;
@@ -23,6 +16,8 @@ body {
 }
 body.correct {
   background:hsl(131, 51%, 38%);
+  align-items: center;
+
 
 }
 body.wrong {
@@ -31,11 +26,15 @@ body.wrong {
 /* now I want to style my container so that it looks like a card */
 .container{
   width: 800px;
-  max-width: 80%;
+  max-width: 90%;
   background: hsl(83, 64%, 50%);
-  border-radius: 5px;
-  padding: 10px;
+  border-radius: 20px;
+  padding: 50px;
   box-shadow: 0 0 10px 2px;
+  align-items: center;
+  
+
+
 
 }
 /* this allows for my buttons to dsplay in columns */
@@ -47,13 +46,13 @@ body.wrong {
 }
 
 .btn {
-  --hue: var(--hue-nuetral);
   border: 1px solid hsl(var(hue), 100%, 30%);
   background-color:hsl(298, 100%, 68%);
   font-weight: bolder;
-  border-radius: 5px;
-  padding: 5px 10px;
+  border-radius: 40px;
+  padding: 20px 10px;
   outline: none;
+  font-size: 18px;
 
 }
 
@@ -84,6 +83,17 @@ body.wrong {
 /* this hides the next btn from the landing screen */
 .hide {
   display: none;
+
+}
+#landing_dia {
+ align-items: center
+;
+}
+#question {
+  text-align: center;
+  padding-bottom: 30px;
+  font-weight: bolder;
+  font-size: 25px;
 
 }
 
