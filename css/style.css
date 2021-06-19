@@ -1,0 +1,92 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  font-family: cursive;
+}
+/* colors for possible outcomes */
+
+:root {
+  --neutral: hsl(180, 83%, 50%);
+  --wrong: hsl(5, 83%, 50%);
+  --correct: hsl(131, 51%, 38%);
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background-color:hsl(180, 83%, 50%);
+
+}
+body.correct {
+  background:hsl(131, 51%, 38%);
+
+}
+body.wrong {
+  background: hsl(5, 83%, 50%);
+}
+/* now I want to style my container so that it looks like a card */
+.container{
+  width: 800px;
+  max-width: 80%;
+  background: hsl(83, 64%, 50%);
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 0 0 10px 2px;
+
+}
+/* this allows for my buttons to dsplay in columns */
+.btn-grid {
+  display: grid;
+  grid-template-columns: repeat(2, Auto);
+  gap: 10px;
+  margin: 20px, 0;
+}
+
+.btn {
+  --hue: var(--hue-nuetral);
+  border: 1px solid hsl(var(hue), 100%, 30%);
+  background-color:hsl(298, 100%, 68%);
+  font-weight: bolder;
+  border-radius: 5px;
+  padding: 5px 10px;
+  outline: none;
+
+}
+
+.btn:hover {
+  color: white;
+}
+
+.btn.correct {
+  background: hsl(131, 51%, 38%);
+
+}
+
+.btn.wrong {
+  background: hsl(5, 83%, 50%);
+}
+
+.strt_btn, .nxt_btn{
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding:10px 20px;
+}
+
+.cntrls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* this hides the next btn from the landing screen */
+.hide {
+  display: none;
+
+}
+
+
+  
+  
