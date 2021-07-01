@@ -10,6 +10,7 @@
   <body>
     <div>
        <h1 id= "landing_dia" > WELCOME TO KAMILLE'S CODING QUIZ CLICK START TO BEGIN</h1>
+       <p>Answer the following code related questions as best as you can but be careful each incorrect answers will cost 10 seconds of your time amd score</p>
     <div class="container">
       <!-- the hide class will hide the container by default -->
       <div id="question_container" class="hide">
@@ -25,6 +26,17 @@
         <button id="strt_btn" class="strt_btn btn">START</button>
         <button id="nxt_btn" class="nxt_btn btn hide">NEXT</button>
       </div>
+
+
+         <div id="end-quiz" class="hide">
+        <h2>All done!</h2>
+        <p>Your final score is <span id="final-score"></span>.</p>
+        <p>
+          Enter initials: <input type="text" id="initials" max="3" />
+          <button id="submit">Submit</button>
+        </p>
+      </div>
+
     </div>
   </div>
 

@@ -24,7 +24,7 @@ const questions = [
   {
     question: 'Commonly used data types DO NOT include',
     answers: [
-      { text: 'Aerts', correct: true},
+      { text: 'Alerts', correct: true},
       { text:  'strings', correct: false},
       { text: 'booleans', correct: false },
       { text: 'numbers', correct: false}
