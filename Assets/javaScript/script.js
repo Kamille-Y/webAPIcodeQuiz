@@ -7,6 +7,7 @@ const questionElement = document.getElementById("question");
 const answerButtonsElement = document.getElementById("answer-buttons");
 //  this randomizes my questions let allows this to be redefined later
 let shuffledQuestions, currentQuestionIndex;
+currentQuestionIndex = 0
 
 // timer elements 10 sec per question
 var time = questions.length * 10;
@@ -94,7 +95,7 @@ function answerSelection(e) {
     startButton.classList.remove("hide");
   }
 }
-if (this.value !== questions[currentQuestionIndex].answers) {
+if (this.value !== questions[currentQuestionIndex].answer, "wrong") {
   // penalize time
   time -= 10;
 
