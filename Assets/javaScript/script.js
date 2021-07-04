@@ -45,7 +45,7 @@ function startQuiz(){
 }
 
 
-
+// Get current question object from array of questions
 function setNextQuestion() {
  resetState()
  showQuestion(shuffledQuestions[currentQuestionIndex])
@@ -89,6 +89,7 @@ function answerSelection(e){
   startButton.innerText = 'Restart'
   startButton.classList.remove('hide')
 }
+}
 
 
 
@@ -104,6 +105,7 @@ function setStatusClass(element, correct){
 function clearStatusClass(element) {
   element.classList.remove('correct')
   element.classList.remove('wrong')
+}
 };
 
 
@@ -129,6 +131,7 @@ function quizTimer() {
     if (time <= 0) {
       quizEnd();
     }
+  }
 
   
 
