@@ -68,6 +68,7 @@ function showQuestion(question) {
   })
 }
 function resetState() {
+  clearStatusClass(document.body)
   nextButton.classList.add('hide')
   while (answerButtonsElement.firstChild) {
     answerButtonsElement.removeChild
@@ -83,15 +84,6 @@ function answerSelection(e){
   Array.from(answerButtonsElement.children).forEach(button => {
     setStatusClass(button, button.dataset.correct)
   })
-  if (shuffledQuestions.length > currentQuestionIndex + 1){
-    nextButton.classList.remove('hide')
-} else {
-  startButton.innerText = 'Restart'
-  startButton.classList.remove('hide')
-}
-}
-
-
 
 
 function setStatusClass(element, correct){
@@ -101,12 +93,21 @@ function setStatusClass(element, correct){
  } else {
    element.classList.add('wrong')
  }
+}
 
+  if (shuffledQuestions.length > currentQuestionIndex + 1){
+    nextButton.classList.remove('hide')
+} else {
+  startButton.innerText = 'Restart'
+  startButton.classList.remove('hide')
+}
+}
 function clearStatusClass(element) {
   element.classList.remove('correct')
   element.classList.remove('wrong')
 }
-};
+ 
+
 
 
 

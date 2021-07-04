@@ -13,6 +13,7 @@ body {
   justify-content: center;
   align-items: center;
   background-color:hsl(180, 83%, 50%);
+  
 
 }
 body.correct {
@@ -27,16 +28,22 @@ body.wrong {
 /* now I want to style my container so that it looks like a card */
 .container{
   width: 800px;
-  max-width: 90%;
+  max-width: 80%;
   background: hsl(83, 64%, 50%);
   border-radius: 20px;
   padding: 50px;
   box-shadow: 0 0 10px 2px;
   align-items: center;
+  margin-left: 100px;
   
+}
 
-
-
+#landing_dia {
+ align-items: center;
+ width: 600px;
+ max-width: 80%;
+ word-wrap: normal;
+ display: inline-flex;
 }
 /* this allows for my buttons to dsplay in columns */
 .btn-grid {
@@ -86,10 +93,7 @@ body.wrong {
   display: none;
 
 }
-#landing_dia {
- align-items: center
-;
-}
+
 #question {
   text-align: center;
   padding-bottom: 30px;
