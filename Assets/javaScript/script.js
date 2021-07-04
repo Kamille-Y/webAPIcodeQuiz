@@ -1,4 +1,5 @@
 const startButton = document.getElementById('strt_btn')
+const timerEl = document.querySelector("#time")
 const nextButton = document.getElementById('nxt_btn')
 const headerGreetingElement = document.getElementById('landing_dia')
 const questionContainerElement = document.getElementById('question_container')
@@ -6,6 +7,11 @@ const questionElement = document.getElementById('question')
 const answerButtonsElement = document.getElementById('answer-buttons')
 //  this randomizes my questions let allows this to be redefined later
 let shuffledQuestions, currentQuestionIndex
+
+// timer elements 10 sec per question
+var time = questions.length * 10;
+var timerId;
+
 // start and toggle
 startButton.addEventListener('click', startQuiz)
 nextButton.addEventListener('click', () => {
@@ -19,13 +25,26 @@ function startQuiz(){
   console.log('started')
   // this hides the start button after it has been pressed 
   startButton.classList.add('hide')
+  
   shuffledQuestions = questions.sort(() => Math.random() - .5)
+  
   currentQuestionIndex = 0
+ 
   headerGreetingElement.classList.add('hide')
+  //removes hide from questions
+ 
   questionContainerElement.classList.remove('hide')
-  setNextQuestion()
 
+   // start timer
+   timerId = setInterval(quizTimer, 1000);
+
+   // show starting time
+   timerEl.textContent = time;
+  
+   setNextQuestion();
 }
+
+
 
 function setNextQuestion() {
  resetState()
@@ -35,6 +54,7 @@ function setNextQuestion() {
 
 function showQuestion(question) {
   questionElement.innerText = question.question
+  
   question.answers.forEach(answer => {
     const button = document.createElement('button')
     button.innerText = answer.text
@@ -68,9 +88,10 @@ function answerSelection(e){
 } else {
   startButton.innerText = 'Restart'
   startButton.classList.remove('hide')
+}
 
-}
-}
+
+
 
 function setStatusClass(element, correct){
   clearStatusClass(element)
@@ -79,11 +100,38 @@ function setStatusClass(element, correct){
  } else {
    element.classList.add('wrong')
  }
-}
+
 function clearStatusClass(element) {
   element.classList.remove('correct')
   element.classList.remove('wrong')
 };
+
+
+
+function quizEnd() {
+  // stop timer
+  clearInterval(timerId);
+
+  // show end screen
+  var endScreenEl = document.getElementById("end-screen");
+  endScreenEl.removeAttribute("class");
+
+  // show final score
+  var finalScoreEl = document.getElementById("final-score");
+  finalScoreEl.textContent = time;
+};
+
+function quizTimer() {
+  // update time
+  time--;
+  timerEl.textContent = time;
+    // check if user ran out of time
+    if (time <= 0) {
+      quizEnd();
+    }
+
+  
+
 
 
   

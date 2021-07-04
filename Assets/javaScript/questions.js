@@ -66,12 +66,12 @@ const questions = [
     
   },
   {
-    question: 'What are the two basic groups of data types in JavaScript?',
+    question: 'Boolean operators that can be used in JavaScript include:',
     answers: [
-      { text:  'Primitive and attributel', correct: false},
-      { text: 'Reference types and attribute', correct: true },
-      { text: 'Primitive and reference types', correct: true},
-      { text: 'none of the above', correct: false}
+      { text:  'And Operator &&', correct: false},
+      { text: 'Or Operator || ', correct: false},
+      { text: 'Not Operator !', correct: false},
+      { text: 'All of the above', correct: true}
     
     ]
     

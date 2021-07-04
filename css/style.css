@@ -3,6 +3,7 @@
   font-family: cursive;
 }
 
+
 body {
   padding: 0;
   margin: 0;
@@ -80,7 +81,7 @@ body.wrong {
   justify-content: center;
   align-items: center;
 }
-/* this hides the next btn from the landing screen */
+/* this hides elements on the landing screen */
 .hide {
   display: none;
 
@@ -95,6 +96,17 @@ body.wrong {
   font-weight: bolder;
   font-size: 25px;
 
+}
+
+.timer {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+.scores {
+  position: absolute;
+  top: 10px;
+  left: 10px;
 }
 
 
