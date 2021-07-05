@@ -42,7 +42,15 @@ function startQuiz() {
   // show starting time
   timerEl.textContent = time;
 
+<<<<<<< HEAD
  if (time < 0) {
+=======
+  if (this.value !== questions[currentQuestionIndex].answer, "wrong") {
+    // time penalty
+    time -= 10;
+  
+  }if (time < 0) {
+>>>>>>> babb3e453338f41fcd1f2c9cfe114e3f1523a2ac
       time = 0;
     }
 
