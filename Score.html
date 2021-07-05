@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JavaScript: The Quiz Highscores</title>
-    <link href="highscores.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
 </head>
 <body>
     <div class="highscores-container">
@@ -25,12 +25,12 @@
           <p>Notice: Refresh after clearing highscores</p>
     </div>
     <div class="highscore-button-container">
-    <button onclick="location.href='index.html';" class="highscore-button">Back to Start</button>
-    <button onclick="localStorage.clear();" class="highscore-button">Clear Highscore</button>
-    <button onclick="location.reload();" class="highscore-button">Refresh</button>
+    <button onclick="location.href='index.html';" class="btn">Back to Quiz</button>
+    <button onclick="localStorage.clear();" class="btn">Clear Highscore</button>
+    <button onclick="location.reload();" class="btn">Refresh</button>
     </div>
     </div>
     
-    <script src="/Assets/score.js"></script>
+    <script src="/Assets/javaScript/score.js"></script>
 </body>
 </html>
