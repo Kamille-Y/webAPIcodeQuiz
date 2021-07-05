@@ -1,3 +1,4 @@
+
 *, *::before, *::after {
   box-sizing: border-box;
   font-family: cursive;
@@ -34,17 +35,17 @@ body.wrong {
   padding: 50px;
   box-shadow: 0 0 10px 2px;
   align-items: center;
-  margin-left: 100px;
+  margin-left: 40px;
   
 }
 
-#landing_dia {
+/* #landing_dia {
  align-items: center;
  width: 600px;
  max-width: 80%;
  word-wrap: normal;
  display: inline-flex;
-}
+} */
 /* this allows for my buttons to dsplay in columns */
 .btn-grid {
   display: grid;
@@ -113,6 +114,15 @@ body.wrong {
   left: 10px;
 }
 
+.wrapper {
+  margin: 100px auto 0 auto;
+  max-width: 600px;
+}
+p {
+  font-weight: lighter;
+  font-size: 1.5rem;
+
+}
 
   
   

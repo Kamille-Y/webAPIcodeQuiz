@@ -10,7 +10,7 @@ let shuffledQuestions, currentQuestionIndex;
 currentQuestionIndex = 0
 
 // timer elements 10 sec per question
-var time = questions.length * 10;
+var time = questions.length * 15;
 var timerId;
 
 // start and toggle
@@ -23,6 +23,8 @@ nextButton.addEventListener("click", () => {
 function startQuiz() {
   console.log("started");
   // this hides the start button after it has been pressed
+  var startPageEl = document.getElementById("landing_dia");
+  startPageEl.setAttribute("class", "hide");
   startButton.classList.add("hide");
 
   shuffledQuestions = questions.sort(() => Math.random() - 0.5);
@@ -40,6 +42,10 @@ function startQuiz() {
   // show starting time
   timerEl.textContent = time;
 
+ if (time < 0) {
+      time = 0;
+    }
+
   setNextQuestion();
 }
 
@@ -47,6 +53,7 @@ function startQuiz() {
 function setNextQuestion() {
   resetState();
   showQuestion(shuffledQuestions[currentQuestionIndex]);
+  
 }
 
 function showQuestion(question) {
@@ -86,6 +93,9 @@ function answerSelection(e) {
     } else {
       element.classList.add("wrong");
     }
+    if (this.value !== questions[currentQuestionIndex].answer, "wrong") {
+      // time penalty
+      time -= 2;}
   }
 
   if (shuffledQuestions.length > currentQuestionIndex + 1) {
@@ -95,13 +105,7 @@ function answerSelection(e) {
     startButton.classList.remove("hide");
   }
 }
-if (this.value !== questions[currentQuestionIndex].answer, "wrong") {
-  // penalize time
-  time -= 10;
 
-}if (time < 0) {
-    time = 0;
-  }
 
 function clearStatusClass(element) {
   element.classList.remove("correct");
@@ -127,7 +131,11 @@ function quizTimer() {
   timerEl.textContent = time;
   // check if user ran out of time
   if (time <= 0) {
-    quizEnd();
+    quizEnd(); 
+  }
+  function quizEnd() {
+    // stop timer
+    clearInterval(timerId);
   }
 }
 

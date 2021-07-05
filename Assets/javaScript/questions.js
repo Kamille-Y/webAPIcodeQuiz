@@ -76,18 +76,6 @@ const questions = [
     ]
     
   },
-  
-  {
-    question: 'In JavaScript what is the data type of variables?',
-    answers: [
-      { text:  'function data', correct: false},
-      { text: 'object data', correct: true },
-      { text: 'none of the above', correct: true},
-      { text: 'all of the above', correct: false}
-    
-    ]
-    
-  },
   {
     question: 'What encloses strings when assigned a variable?',
     answers: [
