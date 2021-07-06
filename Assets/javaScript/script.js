@@ -91,11 +91,10 @@ function answerSelection(e) {
     if (correct) {
       element.classList.add("correct");
     } else {
-      element.classList.add("wrong");
+      element.classList.add("wrong")
+      time -=10;
     }
-    if (this.value !== questions[currentQuestionIndex].answer, "wrong") {
-      // time penalty
-      time -= 2;}
+
   }
 
   if (shuffledQuestions.length > currentQuestionIndex + 1) {
