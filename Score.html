@@ -3,30 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JavaScript: The Quiz Highscores</title>
+    <title>JavaScript Quiz Highscores</title>
     <link href="/css/style.css" rel="stylesheet">
 </head>
 <body>
     <div class="highscores-container">
-        <h1 class="highscore-title">HIGHSCORES</h1>
     <div class="highscore-list">
-        <table class="score-table" style="width:100%">
-            <tr>
-              <th>Initials</th>
-              <th>Score</th>
-            </tr>
-            <tr>
-                <th class="initials-container">
-                </th>
-                <th class="score-container">
-                </th>
-            </tr>
-          </table>
-          <p>Notice: Refresh after clearing highscores</p>
+        <div class="wrapper">
+            <h1>Highscores</h1>
+            <ol id="topScores"></ol>
+      
     </div>
     <div class="highscore-button-container">
     <button onclick="location.href='index.html';" class="btn">Back to Quiz</button>
-    <button onclick="localStorage.clear();" class="btn">Clear Highscore</button>
+    <button onclick="localStorage.clear();" id="clear" class="btn">Clear Highscore</button>
     <button onclick="location.reload();" class="btn">Refresh</button>
     </div>
     </div>

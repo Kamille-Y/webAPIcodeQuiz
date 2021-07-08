@@ -23,7 +23,7 @@ nextButton.addEventListener("click", () => {
 });
 
 function startQuiz() {
-  console.log("started");
+  // console.log("started");
   // this hides the start button after it has been pressed
   var startPageEl = document.getElementById("landing_dia");
   startPageEl.setAttribute("class", "hide");
@@ -89,7 +89,7 @@ function answerSelection(e) {
 
   function setStatusClass(element, correct) {
     clearStatusClass(element);
-    console.log(correct);
+    // console.log(correct);
     if (correct) {
       element.classList.add("correct");
     } else {
@@ -144,12 +144,12 @@ function quizTimer() {
   }
 }
 // grabbing value from input box
-function topScores() {
+function savetopScores() {
   initials = initialsEl.value.trim();
   if (initials !== "") {
     var topScores =
       // this retrieves highscores from the local storage or returns an empty array
-      JSON.parse(windows.localStorage.getItem("topScores")) || [];
+      JSON.parse(window.localStorage.getItem("topScores")) || [];
     // new score object from current player
     var currentScore = {
       score: time,
@@ -158,19 +158,20 @@ function topScores() {
 
     // saving scores to pc
     topScores.push(currentScore);
-    window.localStorage.setItem("topScores", JSON.stringify(Scores));
+    window.localStorage.setItem("topScores", JSON.stringify(topScores));
     //redirect to score html
     window.location.href = "Score.html";
   }
 }
 
+
 function checkForEnter(event) {
   // "13" is the enter keycode
   if (event.key === "Enter") {
-    saveTopscores();
+    topScores();
   }
 }
 // user clicks button to submit initials
-submitBtn.onclick = saveTopscores;
+submitBtn.onclick = savetopScores;
 
 initialsEl.onkeyup = checkForEnter;
